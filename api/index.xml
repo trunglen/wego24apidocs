@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apis on Wego24 Api Docs</title>
-    <link>https://trunglen.github.io/wego24api/api/</link>
+    <link>https://trunglen.github.io/wego24apidocs/api/</link>
     <description>Recent content in Apis on Wego24 Api Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2016. All rights reserved.</copyright>
     <lastBuildDate>Tue, 13 Sep 2016 11:27:28 +0700</lastBuildDate>
-    <atom:link href="https://trunglen.github.io/wego24api/api/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://trunglen.github.io/wego24apidocs/api/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Authentication Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/authentication/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/authentication/</link>
       <pubDate>Tue, 13 Sep 2016 11:27:28 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/authentication/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/authentication/</guid>
       <description>
 
 &lt;h1 id=&#34;authenticaton&#34;&gt;Authenticaton&lt;/h1&gt;
@@ -136,10 +136,10 @@ GET /api/auth/check/facebook/:facebook_id
     
     <item>
       <title>Protocol Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/protocol/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/protocol/</link>
       <pubDate>Tue, 13 Sep 2016 11:27:15 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/protocol/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/protocol/</guid>
       <description>
 
 &lt;h1 id=&#34;protocol&#34;&gt;Protocol&lt;/h1&gt;
@@ -173,10 +173,10 @@ Client nhận &lt;code&gt;key&lt;/code&gt; ở trong response nếu thực hiệ
     
     <item>
       <title>Static Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/static/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/static/</link>
       <pubDate>Tue, 13 Sep 2016 11:27:08 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/static/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/static/</guid>
       <description>
 
 &lt;h1 id=&#34;static-server&#34;&gt;Static Server&lt;/h1&gt;
@@ -193,10 +193,10 @@ Client nhận &lt;code&gt;key&lt;/code&gt; ở trong response nếu thực hiệ
     
     <item>
       <title>Shipment Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/shipment/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/shipment/</link>
       <pubDate>Tue, 13 Sep 2016 11:27:02 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/shipment/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/shipment/</guid>
       <description>
 
 &lt;h2 id=&#34;shipment-api&#34;&gt;Shipment API&lt;/h2&gt;
@@ -278,10 +278,10 @@ Response data: &lt;code&gt;array of &amp;lt;shipment&amp;gt;&lt;/code&gt;&lt;/p&
     
     <item>
       <title>Setting Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/setting/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/setting/</link>
       <pubDate>Tue, 13 Sep 2016 11:26:56 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/setting/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/setting/</guid>
       <description>
 
 &lt;h1 id=&#34;default-setting&#34;&gt;Default Setting&lt;/h1&gt;
@@ -319,10 +319,10 @@ Response data: &lt;code&gt;array of &amp;lt;shipment&amp;gt;&lt;/code&gt;&lt;/p&
     
     <item>
       <title>Wmap Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/wmap/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/wmap/</link>
       <pubDate>Tue, 13 Sep 2016 11:26:51 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/wmap/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/wmap/</guid>
       <description>
 
 &lt;h1 id=&#34;carrier-socket&#34;&gt;Carrier Socket&lt;/h1&gt;
@@ -380,10 +380,10 @@ Response Data:&lt;/p&gt;
     
     <item>
       <title>Gmap Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/gmap/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/gmap/</link>
       <pubDate>Tue, 13 Sep 2016 11:26:47 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/gmap/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/gmap/</guid>
       <description>
 
 &lt;h1 id=&#34;gmap&#34;&gt;Gmap&lt;/h1&gt;
@@ -410,10 +410,10 @@ Response Data:&lt;/p&gt;
     
     <item>
       <title>User Api Docs</title>
-      <link>https://trunglen.github.io/wego24api/api/user/</link>
+      <link>https://trunglen.github.io/wego24apidocs/api/user/</link>
       <pubDate>Tue, 13 Sep 2016 11:26:38 +0700</pubDate>
       
-      <guid>https://trunglen.github.io/wego24api/api/user/</guid>
+      <guid>https://trunglen.github.io/wego24apidocs/api/user/</guid>
       <description>
 
 &lt;h1 id=&#34;user-api&#34;&gt;User API&lt;/h1&gt;
