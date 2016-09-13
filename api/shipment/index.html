@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.16" />
+
+  <title>Shipment Api Docs &middot; Wego24 Api Docs</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://trunglen.github.io/wego24api/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://trunglen.github.io/wego24api/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="https://trunglen.github.io/wego24api/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="https://trunglen.github.io/wego24api/img/favicon.ico" type="image/x-icon" />
+
+  
+    <link rel="stylesheet" href="https://trunglen.github.io/wego24api/css/my.css">
+  
+  
+    <script src="https://trunglen.github.io/wego24api/js/my.js"></script>
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="https://trunglen.github.io/wego24api/">Wego24</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/user/"><i class='fa fa-user fa-fw'></i>User Api</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/shipment"><i class='fa fa-ship fa-fw'></i>Shipment Api</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/authentication"><i class='fa fa fa-expeditedssl fa-fw'></i>Auth Api</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/gmap"><i class='fa fa-map-marker fa-fw'></i>Gmap Api</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/protocol"><i class='fa fa-product-hunt fa-fw'></i>Protocol Api</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/setting"><i class='fa fa-opera fa-fw'></i>Setting Api</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/static"><i class='fa fa-weibo fa-fw'></i>Static Api</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://trunglen.github.io/wego24api/api/wmap"><i class='fa fa-map fa-fw'></i>Wmap Api</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://twitter.com/*" target="_blank"><i class="fa fa-twitter-square fa-fw"></i>Twitter</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="*" target="_blank"><i class="fa fa-comment fa-fw"></i>GNU social</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://facebook.com/*" target="_blank"><i class="fa fa-facebook-square fa-fw"></i>Facebook</a>
+    </li>
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://plus.google.com/+*" target="_blank"><i class="fa fa-google-plus-square fa-fw"></i>Google+</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2016. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Shipment Api Docs</h1>
+  <h2></h2>
+</div>
+<div class="content">
+  
+
+<h2 id="shipment-api">Shipment API</h2>
+
+<h3 id="new-shipment">New Shipment</h3>
+
+<p><code>POST /api/shipment/new?access_token=&lt;access_token&gt;</code></p>
+
+<ul>
+<li>Currency: &ldquo;dong&rdquo;, &ldquo;usd&rdquo;</li>
+<li>Payment At: &ldquo;picked_up&rdquo;, &ldquo;delivered&rdquo;, &ldquo;other&rdquo;</li>
+<li>After: <code>timestamp</code></li>
+<li>Before: <code>timestamp</code></li>
+</ul>
+
+<p>Request body:</p>
+
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Giao nhận 1&quot;,
+  &quot;content&quot;: &quot;Nội dung đơn hàng&quot;,
+  &quot;currency&quot;: &quot;dong&quot;,
+  &quot;private&quot;: false,
+  &quot;payment_at&quot;: &quot;delivered&quot;,
+  &quot;origin&quot;: {
+    &quot;lat&quot;: 58.01,
+    &quot;lng&quot;: 105.98,
+    &quot;address&quot;: &quot;125 Chùa Bộc&quot;,
+    &quot;phone&quot;: &quot;090123456&quot;,
+    &quot;at&quot;: 1470898469
+  },
+  &quot;items&quot;: [
+    {
+      &quot;destination&quot;: {
+        &quot;lat&quot;: 60.02,
+        &quot;lng&quot;: 106.21,
+        &quot;address&quot;: &quot;30 Huỳnh Thúc Kháng&quot;,
+        &quot;phone&quot;: &quot;090123456&quot;,
+        &quot;at&quot;: 1470898469
+      },
+      &quot;name&quot;: &quot;Hộp bánh&quot;,
+      &quot;notes&quot;: &quot;Ghi chú&quot;,
+      &quot;budget&quot;: 30000,
+      &quot;deposit&quot;: 60000,
+      &quot;weight&quot;: 0.5,
+      &quot;dimensions&quot;: {
+        &quot;width&quot;: 0.5,
+        &quot;height&quot;: 0.5,
+        &quot;depth&quot;: 0.1
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p>Response data: `<shipment object></p>
+
+<h3 id="get-shipment">Get Shipment</h3>
+
+<p><code>GET /api/shipment/get/:id</code>
+Response data: <code>&lt;shipment object&gt;</code></p>
+
+<h3 id="update-shipment">Update Shipment</h3>
+
+<p><code>POST /api/shipment/update/:id</code>
+Request body: <code>&lt;shipment data&gt;</code>
+Response data: <code>&lt;shipment object&gt;</code></p>
+
+<h3 id="delete-shipment">Delete Shipment</h3>
+
+<p><code>POST /api/shipment/delete/:id</code>
+Response data: <code>null</code></p>
+
+<h2 id="my-shipment">My shipment</h2>
+
+<p><code>GET /api/shipment/mine</code>
+Response data: <code>array of &lt;shipment&gt;</code></p>
+
+</div>
+
+</div>
+</div>
+<script src="https://trunglen.github.io/wego24api/js/ui.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'Your Google Analytics tracking ID', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</body>
+</html>
+

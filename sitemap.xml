@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/</loc>
+    <lastmod>2016-09-13T11:27:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/authentication/</loc>
+    <lastmod>2016-09-13T11:27:28+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/protocol/</loc>
+    <lastmod>2016-09-13T11:27:15+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/static/</loc>
+    <lastmod>2016-09-13T11:27:08+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/shipment/</loc>
+    <lastmod>2016-09-13T11:27:02+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/setting/</loc>
+    <lastmod>2016-09-13T11:26:56+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/wmap/</loc>
+    <lastmod>2016-09-13T11:26:51+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/gmap/</loc>
+    <lastmod>2016-09-13T11:26:47+07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://trunglen.github.io/wego24api/api/user/</loc>
+    <lastmod>2016-09-13T11:26:38+07:00</lastmod>
+  </url>
+  
+</urlset>

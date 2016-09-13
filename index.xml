@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wego24 Api Docs</title>
+    <link>https://trunglen.github.io/wego24api/</link>
+    <description>Recent content on Wego24 Api Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 13 Sep 2016 11:27:28 +0700</lastBuildDate>
+    <atom:link href="https://trunglen.github.io/wego24api/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Authentication Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/authentication/</link>
+      <pubDate>Tue, 13 Sep 2016 11:27:28 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/authentication/</guid>
+      <description>
+
+&lt;h1 id=&#34;authenticaton&#34;&gt;Authenticaton&lt;/h1&gt;
+
+&lt;p&gt;Các api liên quan đến xác thực phải hạn chế khả năng bị lạm dụng.&lt;/p&gt;
+
+&lt;p&gt;Danh sách Authenticaton API&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GET /api/auth/check/phone/:phone_number
+GET /api/auth/check/email/:email
+GET /api/auth/check/facebook/:facebook_id
+
+POST /api/auth/signup?role=&amp;lt;role&amp;gt;
+
+POST /api/auth/login
+POST /api/auth/login_facebook
+POST /api/auth/logout
+
+POST /api/auth/reset_password
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;check-phone-number-email&#34;&gt;Check Phone Number / Email&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;GET /api/auth/check/phone/:phone_number
+GET /api/auth/check/email/:email
+GET /api/auth/check/facebook/:facebook_id
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;exists&amp;quot;: &amp;quot;true/false&amp;quot;,
+    &amp;quot;verified&amp;quot;: &amp;quot;true/false&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;tạo-key-mới-login&#34;&gt;Tạo key mới (login)&lt;/h1&gt;
+
+&lt;h2 id=&#34;login-with-email&#34;&gt;Login with email&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/auth/login&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Cần nhập &lt;code&gt;phone&lt;/code&gt; hoặc &lt;code&gt;email&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{   
+    &amp;quot;phone&amp;quot;: &amp;quot;&amp;quot;
+    &amp;quot;email&amp;quot;: &amp;quot;nguyenvana@gmail.com&amp;quot;,
+    &amp;quot;password&amp;quot;: &amp;quot;123456&amp;quot;,
+    &amp;quot;role&amp;quot;: &amp;quot;*carrier/customer &amp;lt;- required&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response Data: &lt;code&gt;&amp;lt;user profile&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;login-with-facebook&#34;&gt;Login with Facebook&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/auth/login_facebook&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;facebook_id&amp;quot;: &amp;quot;1232234234324&amp;quot;,
+    &amp;quot;facebook_token&amp;quot;: &amp;quot;123afsdfsfef2132&amp;quot;,
+    &amp;quot;role&amp;quot;: &amp;quot;*carrier/customer &amp;lt;- required&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response Data: &lt;code&gt;&amp;lt;user profile&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;hủy-key-logout&#34;&gt;Hủy key (Logout)&lt;/h2&gt;
+
+&lt;p&gt;Chú y: Client không tiếp tục sử dụng key sau khi logout&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/auth/logout&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Query: &lt;code&gt;access_token=&amp;lt;key&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;đăng-ký&#34;&gt;Đăng ký&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/auth/signup?role=&amp;lt;role&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Params: &lt;em&gt;role&lt;/em&gt; để đăng nhập. Hiện tại, &lt;em&gt;role&lt;/em&gt; có thể nhận giá trị &lt;code&gt;carrier/customer&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body &lt;em&gt;xem Update User Info&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Response Data: &lt;code&gt;&amp;lt;user profile&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Required fields:
+- &lt;code&gt;phone,first_name,last_name&lt;/code&gt;
+- To use facebook: &lt;code&gt;fb_id, fb_token&lt;/code&gt;
+- Otherwise: &lt;code&gt;password&lt;/code&gt; is required&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;các-api-khác&#34;&gt;Các API khác&lt;/h1&gt;
+
+&lt;h2 id=&#34;reset-password&#34;&gt;Reset Password&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/auth/reset_password&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;phone&amp;quot;: &amp;quot;091234234&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response: &lt;code&gt;&amp;lt;default&amp;gt;&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Protocol Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/protocol/</link>
+      <pubDate>Tue, 13 Sep 2016 11:27:15 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/protocol/</guid>
+      <description>
+
+&lt;h1 id=&#34;protocol&#34;&gt;Protocol&lt;/h1&gt;
+
+&lt;h2 id=&#34;http&#34;&gt;HTTP&lt;/h2&gt;
+
+&lt;h3 id=&#34;request&#34;&gt;Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Public request&lt;/strong&gt; bao gồm các request không cần xác thực như &lt;code&gt;login&lt;/code&gt;, &lt;code&gt;reset_password&lt;/code&gt;, &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Private request&lt;/strong&gt; bao gồm các request mà cần xác thực người yêu cầu.
+Ví dụ: update profile, đổi mật khẩu, thêm đơn hàng,&amp;hellip;
+Tất cả &lt;em&gt;private request&lt;/em&gt; cần gửi key kèm theo.
+Client nhận &lt;code&gt;key&lt;/code&gt; ở trong response nếu thực hiện thành công một số api trong phần &lt;code&gt;Authenticate&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;response&#34;&gt;Response&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;status&amp;quot;: &amp;quot;success/error&amp;quot;,
+    &amp;quot;error&amp;quot;: &amp;quot;if error, this is the message&amp;quot;,
+    &amp;quot;access_token&amp;quot;: &amp;quot;if a new key was created&amp;quot;,
+    &amp;quot;data&amp;quot;: &amp;quot;if success, this is the data&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response &lt;code&gt;&amp;lt;default&lt;/code&gt; có nghĩa không cần kiểm tra &lt;code&gt;&amp;quot;data&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Response Data nghĩa là &lt;code&gt;&amp;quot;data&amp;quot;&lt;/code&gt; trong response&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Static Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/static/</link>
+      <pubDate>Tue, 13 Sep 2016 11:27:08 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/static/</guid>
+      <description>
+
+&lt;h1 id=&#34;static-server&#34;&gt;Static Server&lt;/h1&gt;
+
+&lt;h2 id=&#34;avatar&#34;&gt;Avatar&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;GET /static/avatar/&amp;lt;userid&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;shipment&#34;&gt;Shipment&lt;/h2&gt;
+
+&lt;p&gt;List images: &lt;code&gt;GET /static/shipment/&amp;lt;shipmentID&amp;gt;/&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Shipment Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/shipment/</link>
+      <pubDate>Tue, 13 Sep 2016 11:27:02 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/shipment/</guid>
+      <description>
+
+&lt;h2 id=&#34;shipment-api&#34;&gt;Shipment API&lt;/h2&gt;
+
+&lt;h3 id=&#34;new-shipment&#34;&gt;New Shipment&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/shipment/new?access_token=&amp;lt;access_token&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Currency: &amp;ldquo;dong&amp;rdquo;, &amp;ldquo;usd&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Payment At: &amp;ldquo;picked_up&amp;rdquo;, &amp;ldquo;delivered&amp;rdquo;, &amp;ldquo;other&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;After: &lt;code&gt;timestamp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Before: &lt;code&gt;timestamp&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Request body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;title&amp;quot;: &amp;quot;Giao nhận 1&amp;quot;,
+  &amp;quot;content&amp;quot;: &amp;quot;Nội dung đơn hàng&amp;quot;,
+  &amp;quot;currency&amp;quot;: &amp;quot;dong&amp;quot;,
+  &amp;quot;private&amp;quot;: false,
+  &amp;quot;payment_at&amp;quot;: &amp;quot;delivered&amp;quot;,
+  &amp;quot;origin&amp;quot;: {
+    &amp;quot;lat&amp;quot;: 58.01,
+    &amp;quot;lng&amp;quot;: 105.98,
+    &amp;quot;address&amp;quot;: &amp;quot;125 Chùa Bộc&amp;quot;,
+    &amp;quot;phone&amp;quot;: &amp;quot;090123456&amp;quot;,
+    &amp;quot;at&amp;quot;: 1470898469
+  },
+  &amp;quot;items&amp;quot;: [
+    {
+      &amp;quot;destination&amp;quot;: {
+        &amp;quot;lat&amp;quot;: 60.02,
+        &amp;quot;lng&amp;quot;: 106.21,
+        &amp;quot;address&amp;quot;: &amp;quot;30 Huỳnh Thúc Kháng&amp;quot;,
+        &amp;quot;phone&amp;quot;: &amp;quot;090123456&amp;quot;,
+        &amp;quot;at&amp;quot;: 1470898469
+      },
+      &amp;quot;name&amp;quot;: &amp;quot;Hộp bánh&amp;quot;,
+      &amp;quot;notes&amp;quot;: &amp;quot;Ghi chú&amp;quot;,
+      &amp;quot;budget&amp;quot;: 30000,
+      &amp;quot;deposit&amp;quot;: 60000,
+      &amp;quot;weight&amp;quot;: 0.5,
+      &amp;quot;dimensions&amp;quot;: {
+        &amp;quot;width&amp;quot;: 0.5,
+        &amp;quot;height&amp;quot;: 0.5,
+        &amp;quot;depth&amp;quot;: 0.1
+      }
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response data: `&lt;shipment object&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;get-shipment&#34;&gt;Get Shipment&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;GET /api/shipment/get/:id&lt;/code&gt;
+Response data: &lt;code&gt;&amp;lt;shipment object&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;update-shipment&#34;&gt;Update Shipment&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/shipment/update/:id&lt;/code&gt;
+Request body: &lt;code&gt;&amp;lt;shipment data&amp;gt;&lt;/code&gt;
+Response data: &lt;code&gt;&amp;lt;shipment object&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;delete-shipment&#34;&gt;Delete Shipment&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/shipment/delete/:id&lt;/code&gt;
+Response data: &lt;code&gt;null&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;my-shipment&#34;&gt;My shipment&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;GET /api/shipment/mine&lt;/code&gt;
+Response data: &lt;code&gt;array of &amp;lt;shipment&amp;gt;&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Setting Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/setting/</link>
+      <pubDate>Tue, 13 Sep 2016 11:26:56 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/setting/</guid>
+      <description>
+
+&lt;h1 id=&#34;default-setting&#34;&gt;Default Setting&lt;/h1&gt;
+
+&lt;p&gt;Google Map API: &lt;code&gt;gmap.wego24.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Wego Map API: &lt;code&gt;wmap.wego24.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Auth,User API: &lt;code&gt;api.wego24.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;dev-server&#34;&gt;Dev Server&lt;/h1&gt;
+
+&lt;p&gt;Google Map API: &lt;code&gt;203.162.123.63:3001&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Wego Map API: &lt;code&gt;203.162.123.63:3002&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Auth,User API: &lt;code&gt;203.162.123.63:3003&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;get-setting-by-location&#34;&gt;Get Setting By Location&lt;/h1&gt;
+
+&lt;p&gt;Request: &lt;code&gt;wego24.com/api/setting?lat=&amp;lt;lat&amp;gt;&amp;amp;lng=&amp;lt;lng&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Sample Response:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;data_center&amp;quot;: {
+        &amp;quot;api&amp;quot;: &amp;quot;api.wego24.com&amp;quot;,
+        &amp;quot;gmap: &amp;quot;gmap.wego24.com&amp;quot;,
+        &amp;quot;wmap: &amp;quot;wmap.wego24.com&amp;quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wmap Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/wmap/</link>
+      <pubDate>Tue, 13 Sep 2016 11:26:51 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/wmap/</guid>
+      <description>
+
+&lt;h1 id=&#34;carrier-socket&#34;&gt;Carrier Socket&lt;/h1&gt;
+
+&lt;p&gt;Connect to &lt;code&gt;ws://&amp;lt;wmap_host&amp;gt;/wmap/carrier/join?access_token=&amp;lt;access_token&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Example:
+&lt;code&gt;ws://203.162.123.63:3002/wmap/carrier/join?access_token=MHJNaali5bJvbYb49jGRo97QQFSt636Kh9JRKlSWojW3vobWZVt4GN3QtlZLUUcvpmHCUN7w9USazD96&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;echo-for-test-ping&#34;&gt;Echo (for Test/Ping)&lt;/h2&gt;
+
+&lt;p&gt;Request: &lt;code&gt;/echo &amp;lt;data&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Response: &lt;code&gt;/echo &amp;lt;received data&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Example: &lt;code&gt;/echo 123&lt;/code&gt; -&amp;gt; &lt;code&gt;/echo 123&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;set-carrier-location&#34;&gt;Set Carrier location&lt;/h2&gt;
+
+&lt;p&gt;type Point = &lt;code&gt;{&amp;quot;lat&amp;quot;: &amp;lt;float&amp;gt;,&amp;quot;lng&amp;quot;:&amp;lt;float&amp;gt;,&amp;quot;time&amp;quot;:&amp;lt;time stamp&amp;gt;}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Request: &lt;code&gt;/carrier/at &amp;lt;Array of Point&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Các &lt;code&gt;Point&lt;/code&gt; sắp xếp theo thứ tự tăng dần thời gian. Như vậy, &lt;code&gt;Point&lt;/code&gt; cuối cùng chứa vị trí mới nhất&lt;/p&gt;
+
+&lt;p&gt;Response: &lt;code&gt;/carrier/at &amp;lt;len of recieved locations&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Example: &lt;code&gt;/carrier/at [{&amp;quot;lat&amp;quot;:10,&amp;quot;lng&amp;quot;:20,&amp;quot;time&amp;quot;:14235346456},{&amp;quot;lat&amp;quot;:10.01,&amp;quot;lng&amp;quot;:20,&amp;quot;time&amp;quot;:14235346460}]&lt;/code&gt; -&amp;gt; &lt;code&gt;/carrier/at 2&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;find-near-by-carriers&#34;&gt;Find near by Carriers&lt;/h1&gt;
+
+&lt;p&gt;Request: &lt;code&gt;GET /wmap/carrier/near?lat=&amp;lt;float64&amp;gt;&amp;amp;lng=&amp;lt;float64&amp;gt;&amp;amp;km=&amp;lt;float64&amp;gt;&lt;/code&gt;
+Response Data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;[
+  {
+    &amp;quot;lat&amp;quot;: 10,
+    &amp;quot;lng&amp;quot;: 20.0001,
+    &amp;quot;user_id&amp;quot;: &amp;quot;f4405292-0804-4f81-b05c-3695036524ac&amp;quot;,
+    &amp;quot;mtime&amp;quot;: 123213213,
+    &amp;quot;steps&amp;quot;: [
+      {
+        &amp;quot;mtime&amp;quot;: 123213213,
+        &amp;quot;data&amp;quot;: [&amp;lt;Point&amp;gt;]
+      },
+      null,
+      null,
+      null
+    ]
+  }
+]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gmap Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/gmap/</link>
+      <pubDate>Tue, 13 Sep 2016 11:26:47 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/gmap/</guid>
+      <description>
+
+&lt;h1 id=&#34;gmap&#34;&gt;Gmap&lt;/h1&gt;
+
+&lt;h2 id=&#34;search&#34;&gt;Search:&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;        Format:  /gmap/search/:lat/:lng/:radius/:input
+        Example: /gmap/search/20.99/105.81/1000/t
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;auto-complete&#34;&gt;Auto Complete:&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;        Format:  /gmap/auto/:lat/:lng/:radius/:input 
+        Example: /gmap/auto/20.99/105.81/1000/t
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;placedetails&#34;&gt;PlaceDetails:&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;        Format: /place/:placeID
+        Example: /place/ChIJOf2AOb-sNTERsBKsfviho10
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>User Api Docs</title>
+      <link>https://trunglen.github.io/wego24api/api/user/</link>
+      <pubDate>Tue, 13 Sep 2016 11:26:38 +0700</pubDate>
+      
+      <guid>https://trunglen.github.io/wego24api/api/user/</guid>
+      <description>
+
+&lt;h1 id=&#34;user-api&#34;&gt;User API&lt;/h1&gt;
+
+&lt;p&gt;User Profile includes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- user_id: string
+- phone: string
+- pverified: boolean
+- fb_id: string
+- fb_token: string
+- fname: string
+- lname: string
+- email: string
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Danh sách User API:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GET /api/user/profile
+POST /api/user/profile
+POST /api/user/send_phone_code
+POST /api/user/verify_phone
+POST /api/user/change_password
+POST /api/user/avatar
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;get-user-info&#34;&gt;Get User Info&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;GET /api/user/profile&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Response Data: &lt;code&gt;&amp;lt;user profile&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;update-user-info&#34;&gt;Update User Info&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/user/profile&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;phone&amp;quot;: &amp;quot;*091-----&amp;quot;,
+    &amp;quot;email&amp;quot;: &amp;quot;*nguyenvana@gmail.com&amp;quot;,
+    &amp;quot;password&amp;quot;: &amp;quot;*&amp;quot;,
+    &amp;quot;fb_id&amp;quot;: &amp;quot;&amp;quot;,
+    &amp;quot;fk_token&amp;quot;: &amp;quot;&amp;quot;,
+    &amp;quot;fname&amp;quot;: &amp;quot;*Văn A&amp;quot;,
+    &amp;quot;lname&amp;quot;: &amp;quot;*Nguyễn&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response: &lt;code&gt;&amp;lt;default&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;send-code&#34;&gt;Send Code&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/user/send_phone_code&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;phone&amp;quot;: &amp;quot;091234234&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response:  &lt;code&gt;&amp;lt;default&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;verify-phone-number&#34;&gt;Verify Phone Number&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/user/verify_phone&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    &amp;quot;phone&amp;quot;: &amp;quot;091234234&amp;quot;,
+    &amp;quot;code&amp;quot;: &amp;quot;123456&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response: &lt;code&gt;&amp;lt;default&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;đổi-mật-khẩu&#34;&gt;Đổi mật khẩu&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;POST /api/user/change_password&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+    new_password: &amp;quot;12345678&amp;quot;,
+    old_password:&amp;quot; 123456&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Response: &lt;code&gt;&amp;lt;default&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;avatar&#34;&gt;Avatar&lt;/h2&gt;
+
+&lt;p&gt;GET: &lt;code&gt;GET /api/user/avatar&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;UPLOAD: &lt;code&gt;POST /api/user/avatar&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Body: form-data cho &lt;code&gt;avatar&lt;/code&gt;
+Response data : &lt;code&gt;null&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
